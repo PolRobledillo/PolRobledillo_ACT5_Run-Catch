@@ -1,12 +1,5 @@
 fileFormatVersion: 2
-guid: 609e9ecd091942f0b89834f32fb1d90a
-AssetOrigin:
-  serializedVersion: 1
-  productId: 253961
-  packageName: RPG Monster Buddy PBR Polyart
-  packageVersion: 1.0
-  assetPath: Assets/RPGMonsterBuddiesPBRPA/Animation/Mushroom/Mushroom_Attack02Angry.fbx
-  uploadId: 581334
+guid: 7fc6ea6bfa3115e46b67422c33414b76
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
@@ -41,8 +34,8 @@ ModelImporter:
       name: Mushroom_Attack02Angry
       takeName: Take 001
       internalID: 1827226128182048838
-      firstFrame: 0
-      lastFrame: 25
+      firstFrame: 12
+      lastFrame: 17
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -50,7 +43,7 @@ ModelImporter:
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 1
-      loopBlend: 0
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0

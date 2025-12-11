@@ -2,6 +2,7 @@ using NUnit.Framework;
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.AI;
+using UnityEngine.UIElements;
 
 public class EnemyStateMachine : MonoBehaviour
 {
@@ -15,36 +16,48 @@ public class EnemyStateMachine : MonoBehaviour
         SpinAttack
     }
 
-    [Header("References")]
-    public Transform playerTransform;
-    public NavMeshAgent navMeshAgent;
-    public Animator animator;
-
     [Header("State Machine")]
     public AStateSO currentState;
     public EnemyState state = EnemyState.Idle;
     public List<AStateSO> states;
+    public Animator animator;
+    public int performAttack = 0;
 
     [Header("Chase Settings")]
+    public Transform playerTransform;
+    public NavMeshAgent navMeshAgent;
     public float chaseDistance = 10f;
     public float forgetDistance = 15f;
     public float chaseSpeed = 3.5f;
 
     [Header("Charge Attack Settings")]
+    public CapsuleCollider chargeAttackCollider;
     public float cooldownBetweenChargeAttacks = 5f;
+    public float cooldownTimerChargeAttack = 0f;
     public float chargeAttackDamage = 25f;
-    public float chargeAttackSpeed = 8f;
+    public float chargeTime = 1f;
+    public bool performingChargeAttack = false;
 
     [Header("Telegraph Charge Attack Settings")]
+    public GameObject telegraphChargeAttackEffect;
+    public GameObject telegraphChargeAttackEffectImage;
+    public float chargeDistance = 3.5f;
     public float telegraphChargeDuration = 2f;
+    public bool finishedTelegraphingChargeAttack = false;
 
     [Header("Spin Attack Settings")]
+    public SphereCollider spinAttackCollider;
     public float cooldownBetweenSpinAttacks = 7f;
+    public float cooldownTimerSpinAttack = 0f;
     public float spinAttackDuration = 3f;
     public float spinAttackDamagePerSecond = 15f;
+    public bool performingSpinAttack = false;
 
     [Header("Telegraph Spin Attack Settings")]
+    public GameObject telegraphSpinAttackEffect;
+    public GameObject telegraphSpinAttackEffectImage;
     public float telegraphSpinDuration = 2f;
+    public bool finishedTelegraphingSpinAttack = false;
 
     private void Start()
     {
@@ -56,7 +69,19 @@ public class EnemyStateMachine : MonoBehaviour
     private void Update()
     {
         currentState.OnStateUpdate(this);
+        UpdateCooldowns();
         CheckEndingConditions();
+    }
+    void UpdateCooldowns()
+    {
+        if (cooldownTimerChargeAttack > 0f)
+        {
+            cooldownTimerChargeAttack -= Time.deltaTime;
+        }
+        if (cooldownTimerSpinAttack > 0f)
+        {
+            cooldownTimerSpinAttack -= Time.deltaTime;
+        }
     }
     void CheckEndingConditions()
     {
