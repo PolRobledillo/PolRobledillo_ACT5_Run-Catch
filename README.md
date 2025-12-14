@@ -20,6 +20,6 @@ Estos indicadores previos están diseñados para mejorar la jugabilidad y dar al
 
 ## Máquina de estados
 
-A continuación se muestra el **esquema de la máquina de estados** que define los distintos comportamientos y transiciones del enemigo:
+A continuación se muestra el **diagrama de la máquina de estados** que define los distintos comportamientos y transiciones del enemigo:
 
-*()*
+![Diagrama Máquina de Estados](DiagramaEstados.png)
