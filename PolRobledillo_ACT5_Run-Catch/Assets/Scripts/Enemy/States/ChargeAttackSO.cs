@@ -6,6 +6,7 @@ public class ChargeAttackSO : AStateSO
 {
     public override void OnStateEnter(EnemyStateMachine enemy)
     {
+        enemy.performAttack = -1;
         Sequence sequence = DOTween.Sequence();
         sequence.AppendCallback(() =>
                 {
@@ -13,14 +14,19 @@ public class ChargeAttackSO : AStateSO
                     enemy.chargeAttackCollider.enabled = true;
                     enemy.performingChargeAttack = true;
                 })
-                .Append(enemy.transform.DOMoveZ(enemy.transform.position.z + enemy.chargeDistance, enemy.chargeTime));
+                .Append(enemy.transform.DOLocalMoveZ(enemy.transform.localPosition.z + enemy.chargeDistance, enemy.chargeTime))
+                .AppendCallback(() =>
+                {
+                    enemy.performingChargeAttack = false;
+                    enemy.cooldownTimerChargeAttack = enemy.cooldownBetweenChargeAttacks;
+                });
     }
+        
     public override void OnStateUpdate(EnemyStateMachine enemy)
     {
     }
     public override void OnStateExit(EnemyStateMachine enemy)
     {
         enemy.chargeAttackCollider.enabled = false;
-        enemy.performingChargeAttack = false;
     }
 }

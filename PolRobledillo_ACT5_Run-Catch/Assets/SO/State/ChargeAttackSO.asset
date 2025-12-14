@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2122a357eb5f014cbe9b68e0ecb554d, type: 3}
+  m_Name: ChargeAttackSO
+  m_EditorClassIdentifier: Assembly-CSharp::ChargeAttackSO
+  startCondition: {fileID: 11400000, guid: 768bbf9293e1adf4ca83948865b19859, type: 2}
+  endConditions:
+  - {fileID: 11400000, guid: 4db7286570a75af41bf7805240c959b3, type: 2}

@@ -2,7 +2,6 @@ using NUnit.Framework;
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.AI;
-using UnityEngine.UIElements;
 
 public class EnemyStateMachine : MonoBehaviour
 {
@@ -53,6 +52,11 @@ public class EnemyStateMachine : MonoBehaviour
     public float spinAttackDamagePerSecond = 15f;
     public float spinAttackRange = 4f;
     public bool performingSpinAttack = false;
+    public bool isSpinning = false;
+    public float spinTimer = 0f;
+    public float spinSpeed = 1800;
+
+
 
     [Header("Telegraph Spin Attack Settings")]
     public GameObject telegraphSpinAttackEffect;
@@ -78,10 +82,12 @@ public class EnemyStateMachine : MonoBehaviour
         if (cooldownTimerChargeAttack > 0f)
         {
             cooldownTimerChargeAttack -= Time.deltaTime;
+            if (cooldownTimerChargeAttack < 0f) cooldownTimerChargeAttack = 0f;
         }
         if (cooldownTimerSpinAttack > 0f)
         {
             cooldownTimerSpinAttack -= Time.deltaTime;
+            if (cooldownTimerSpinAttack< 0f) cooldownTimerSpinAttack = 0f;
         }
     }
     void CheckEndingConditions()

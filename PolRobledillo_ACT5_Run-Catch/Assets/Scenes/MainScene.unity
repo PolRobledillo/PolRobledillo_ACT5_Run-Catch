@@ -249,6 +249,32 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1061870789}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &26516193 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1269820307859773612, guid: cbc814ca6b730954b8a5e3641bde01c9, type: 3}
+  m_PrefabInstance: {fileID: 1283643509}
+  m_PrefabAsset: {fileID: 0}
+--- !u!135 &26516195
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 26516193}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.77
+  m_Center: {x: -0.23, y: 0, z: 0}
 --- !u!1 &84071574
 GameObject:
   m_ObjectHideFlags: 0
@@ -1551,7 +1577,19 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3577922927071859781, guid: cbc814ca6b730954b8a5e3641bde01c9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 233134524}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4245915190017150719, guid: cbc814ca6b730954b8a5e3641bde01c9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1766946439}
+    - targetCorrespondingSourceObject: {fileID: 4245915190017150719, guid: cbc814ca6b730954b8a5e3641bde01c9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1766946442}
+    - targetCorrespondingSourceObject: {fileID: 4245915190017150719, guid: cbc814ca6b730954b8a5e3641bde01c9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1766946441}
+    - targetCorrespondingSourceObject: {fileID: 1269820307859773612, guid: cbc814ca6b730954b8a5e3641bde01c9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 26516195}
   m_SourcePrefab: {fileID: 100100000, guid: cbc814ca6b730954b8a5e3641bde01c9, type: 3}
 --- !u!1 &1295122465 stripped
 GameObject:
@@ -1701,6 +1739,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1377885980}
   m_CullTransparentMesh: 1
+--- !u!1 &1515263029 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4245915190017150719, guid: cbc814ca6b730954b8a5e3641bde01c9, type: 3}
+  m_PrefabInstance: {fileID: 1283643509}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1515315993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1838,7 +1881,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7807431114919716905, guid: dcc982307a817354fafb192abcd9b917, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.567
+      value: 2.49
       objectReference: {fileID: 0}
     - target: {fileID: 7807431114919716905, guid: dcc982307a817354fafb192abcd9b917, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1846,7 +1889,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7807431114919716905, guid: dcc982307a817354fafb192abcd9b917, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.2464
+      value: 8.52
       objectReference: {fileID: 0}
     - target: {fileID: 7807431114919716905, guid: dcc982307a817354fafb192abcd9b917, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2235,6 +2278,109 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3577922927071859781, guid: cbc814ca6b730954b8a5e3641bde01c9, type: 3}
   m_PrefabInstance: {fileID: 1283643509}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1766946439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1515263029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6242d01c839e28e46a6e377dbf22e381, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyStateMachine
+  currentState: {fileID: 11400000, guid: 924ba09d6f78f254086c65f0aecd4748, type: 2}
+  state: 0
+  states:
+  - {fileID: 11400000, guid: 2b44bd60066673e47897d24ac2ed1a9b, type: 2}
+  - {fileID: 11400000, guid: 9b445e8a10256c448ae394b118fd3ad8, type: 2}
+  - {fileID: 11400000, guid: 69894e7a1ec352645bbf48509b14a700, type: 2}
+  - {fileID: 11400000, guid: 3c4ae08b1f8a507499b84c31ec6449bd, type: 2}
+  - {fileID: 11400000, guid: f9a29dd4000271c45890aba7b4ad5717, type: 2}
+  - {fileID: 11400000, guid: 924ba09d6f78f254086c65f0aecd4748, type: 2}
+  animator: {fileID: 1766946440}
+  performAttack: -1
+  playerTransform: {fileID: 1295122467}
+  navMeshAgent: {fileID: 1766946442}
+  chaseDistance: 10
+  forgetDistance: 15
+  chaseSpeed: 3.5
+  chargeAttackCollider: {fileID: 1766946441}
+  cooldownBetweenChargeAttacks: 5
+  cooldownTimerChargeAttack: -1
+  chargeAttackDamage: 25
+  chargeDistance: 3.5
+  chargeTime: 1
+  performingChargeAttack: 0
+  telegraphChargeAttackEffect: {fileID: 1180797850}
+  telegraphChargeAttackEffectImage: {fileID: 1377885980}
+  telegraphChargeDuration: 2
+  finishedTelegraphingChargeAttack: 0
+  spinAttackCollider: {fileID: 26516195}
+  cooldownBetweenSpinAttacks: 7
+  cooldownTimerSpinAttack: 0
+  spinAttackDuration: 3
+  spinAttackDamagePerSecond: 15
+  spinAttackRange: 2.5
+  performingSpinAttack: 0
+  isSpinning: 0
+  spinTimer: 0
+  spinSpeed: 0
+  telegraphSpinAttackEffect: {fileID: 845006225}
+  telegraphSpinAttackEffectImage: {fileID: 84071574}
+  telegraphSpinDuration: 2
+  finishedTelegraphingSpinAttack: 0
+--- !u!95 &1766946440 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7442050115661319743, guid: cbc814ca6b730954b8a5e3641bde01c9, type: 3}
+  m_PrefabInstance: {fileID: 1283643509}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &1766946441
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1515263029}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.53
+  m_Height: 0
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.48, z: 0.004188478}
+--- !u!195 &1766946442
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1515263029}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &1801191421
 GameObject:
   m_ObjectHideFlags: 0
